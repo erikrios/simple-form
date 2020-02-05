@@ -28,14 +28,29 @@ class HomePageState extends State<HomePage> {
             TextFormField(
               decoration: InputDecoration(hintText: 'Nama'),
               keyboardType: TextInputType.text,
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return 'Nama tidak boleh kosong';
+                }
+              },
             ),
             TextFormField(
               decoration: InputDecoration(hintText: 'No. HP'),
               keyboardType: TextInputType.phone,
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return 'No. HP tidak boleh kosong';
+                }
+              },
             ),
             TextFormField(
               decoration: InputDecoration(hintText: 'Email'),
               keyboardType: TextInputType.emailAddress,
+              validator: (String value) {
+                if (value.isEmpty) {
+                  return 'Email tidak boleh kosong';
+                }
+              },
             ),
             Container(height: 10.0),
             RaisedButton(
