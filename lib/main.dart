@@ -33,48 +33,50 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        key: scaffoldKey,
         appBar: AppBar(
           title: Text('Demo Form'),
         ),
         body: Container(
           margin: EdgeInsets.all(15.0),
           child: Form(
+              key: formKey,
               child: Column(
-            children: <Widget>[
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Nama'),
-                keyboardType: TextInputType.text,
-                validator: (String value) {
-                  if (value.isEmpty) {
-                    return 'Nama tidak boleh kosong';
-                  }
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'No. HP'),
-                keyboardType: TextInputType.phone,
-                validator: (String value) {
-                  if (value.isEmpty) {
-                    return 'No. HP tidak boleh kosong';
-                  }
-                },
-              ),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Email'),
-                keyboardType: TextInputType.emailAddress,
-                validator: (String value) {
-                  if (value.isEmpty) {
-                    return 'Email tidak boleh kosong';
-                  }
-                },
-              ),
-              Container(height: 10.0),
-              RaisedButton(
-                onPressed: validateInput,
-                child: Text('Validasi Data'),
-              )
-            ],
-          )),
+                children: <Widget>[
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'Nama'),
+                    keyboardType: TextInputType.text,
+                    validator: (String value) {
+                      if (value.isEmpty) {
+                        return 'Nama tidak boleh kosong';
+                      }
+                    },
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'No. HP'),
+                    keyboardType: TextInputType.phone,
+                    validator: (String value) {
+                      if (value.isEmpty) {
+                        return 'No. HP tidak boleh kosong';
+                      }
+                    },
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(hintText: 'Email'),
+                    keyboardType: TextInputType.emailAddress,
+                    validator: (String value) {
+                      if (value.isEmpty) {
+                        return 'Email tidak boleh kosong';
+                      }
+                    },
+                  ),
+                  Container(height: 10.0),
+                  RaisedButton(
+                    onPressed: validateInput,
+                    child: Text('Validasi Data'),
+                  )
+                ],
+              )),
         ),
       );
 }
